@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Node {
+        constructor(val) {
+          this.val = val
+          this.next = null
+        }
+      }
+
+      const a = new Node('A')
+      const b = new Node('B')
+      const c = new Node('C')
+      const d = new Node('D')
+
+      a.next = b
+      b.next = c
+      c.next = d
+
+      const linkedListRecursive = (head) => {
+        if (head === null) return '\n'
+
+        return head.val + linkedListRecursive(head.next)
+      }
+
+      console.log('Print LinkedList using Recursive method :')
+      console.log(linkedListRecursive(a))
+    </script>
+  </body>
+</html>
