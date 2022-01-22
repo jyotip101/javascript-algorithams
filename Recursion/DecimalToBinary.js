@@ -9,21 +9,11 @@
 // result = 1 0 1 1 1
 
 const decimalToBinary = (decimal, result) => {
-  // if(decimal === 0) return result
+  if (decimal == 0) return result
 
-  while (decimal != 0) {
-    result = (decimal % 2) + result
-    decimal = Math.floor(decimal / 2)
-  }
-  return result
+  result = (decimal % 2) + result
+
+  return decimalToBinary(Math.floor(decimal / 2), result)
 }
-
-// const decimalToBinary = (decimal, result) => {
-//   if (decimal == 0) return result
-
-//   result = (decimal % 2) + result
-
-//   return decimalToBinary(Math.floor(decimal / 2), result)
-// }
 
 console.log(decimalToBinary(23, ''))
